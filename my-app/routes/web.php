@@ -2,8 +2,9 @@
 
 use App\Http\Controllers\app;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\StudentController;
 
-Route::get('/', function(){
+Route::get('/b', function(){
     return view('welcome', [
         'name' => 'Haider',
         'age' => 20
@@ -11,6 +12,6 @@ Route::get('/', function(){
 });
 
 
-Route::get('/a',function(){
-    return view('calculator');
-});
+Route::get('/student', [StudentController::class, 'view_student']);
+
+
