@@ -47,22 +47,26 @@
 
     <div class="text-center"><button type="button" class="btn btn-success" >Add New</button></div>
 
-    <table class="table thead-light ">
-  <thead>
+    <div class="container mt-5 ">
+        <table class="table table-hover table-striped">
+  <thead class="table-dark text-center">
     <tr>
+        {{-- Header --}}
       <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
+      <th scope="col">Name</th>
+      <th scope="col">Age</th>
+      <th scope="col">Email</th>
       <th>Actions</th>
     </tr>
   </thead>
-  <tbody>
+  <tbody class="text-center">
     <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
+        {{-- Body --}}
+        @foreach ($students as $student)
+      <th scope="row">{{ $student['id'] }}</th>
+      <td>{{ $student['name'] }}</td>
+      <td>{{ $student['age'] }}</td>
+      <td>{{ $student['email'] }}</td>
       <td>
         <div class="btn-group" role="group" aria-label="Basic example">
             <button type="button" class="btn btn-warning">Edit</button>
@@ -72,9 +76,13 @@
       </td>
 
     </tr>
+    @endforeach
+
+    {{-- Footer --}}
 
   </tbody>
 </table>
+    </div>
 
 </body>
 </html>
