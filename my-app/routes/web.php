@@ -12,6 +12,6 @@ Route::get('/b', function(){
 });
 
 
-Route::get('/student', [StudentController::class, 'view_student']);
-
+Route::get('/students', [StudentController::class, 'index']);
+route::get('/student/{post}',[StudentController::class, 'show']);
 
