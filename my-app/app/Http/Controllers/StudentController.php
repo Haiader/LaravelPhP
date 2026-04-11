@@ -20,6 +20,8 @@ class StudentController
 
     public function show($studentId)
     {
-        return view('Student.Show', ["studentId" => $studentId]);
+
+        $singleStudent = ['id' => 1, 'name' => 'Haiader', 'age' => 22, 'email' => 'haider@example.com'];
+        return view('Student.Show', ["student" => $singleStudent]);
     }
 }
