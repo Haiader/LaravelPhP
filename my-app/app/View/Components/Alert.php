@@ -1,0 +1,25 @@
+<?php
+
+namespace App\View\Components;
+
+use Closure;
+use Illuminate\Contracts\View\View;
+use Illuminate\View\Component;
+
+class Alert extends Component
+{
+    /**
+     * Bootstrap contextual colour for the alert (success, warning, danger, info …)
+     */
+    public string $type;
+
+    public function __construct(string $type = 'info')
+    {
+        $this->type = $type;
+    }
+
+    public function render(): View|Closure|string
+    {
+        return view('components.alert');
+    }
+}
